@@ -7,12 +7,22 @@
 
     .hero-img {
         flex: 1;
-        position: relative;
+        position: sticky;
         height: 100vh;
-        padding: 50px 0;
+        top: 0;
+        display: flex;
+        align-items: flex-end;
 
-        img {
+        .logo{
+            padding-bottom:50px;
+            display: inline-block;
+            z-index: 5;
+        }
+
+        .bg-img {
             position: absolute;
+            top: 0;
+            bottom: 0;
         }
     }
 

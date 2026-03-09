@@ -4,7 +4,7 @@ export const customSelectStyles = {
   option: (_provided: any, { isFocused }: any) => ({
     color: isFocused ? '#061058' : '#8287ab',
     padding: '14px 19px',
-    fontSize: '13px',
+    fontSize: '10px',
     cursor: 'pointer',
     margin: 0,
     borderRadius: '2px',

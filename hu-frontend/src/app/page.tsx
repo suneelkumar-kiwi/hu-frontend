@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="login-page">
       <div className="hero-img">
-        <Image src={loginBg} alt="" width={768} height={810} />
+        <Image className="bg-img" src={loginBg} alt="" width={768} height={810} />
         <Link className="logo" href={'/'}>
           <Image src={logo} alt="" width={153} height={100} />
         </Link>

@@ -1,0 +1,168 @@
+@use "./variables" as *;
+
+// ──────────────────────────────────────────
+// Create Account Modal
+// ──────────────────────────────────────────
+.squircle-modal {
+    .modal-dialog {
+        max-width: 360px;
+        margin: auto;
+    }
+
+    .modal-content {
+        background: transparent;
+        border-radius: 0;
+        border: none;
+    }
+
+    .modal-header {
+        border-bottom: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        padding: 35px 0 6px;
+
+        .btn-close {
+            font-size: 8px;
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background-color: $color-white;
+            border-radius: 50%;
+            color: $color-text-primary;
+        }
+    }
+
+    .modal-title {
+        font-size: 10px;
+        color: $color-text-primary;
+        letter-spacing: 0.9px;
+        margin-bottom: 8px;
+        font-weight: 300;
+        line-height: 200%;
+        border-radius: 25px;
+        background: rgba($color-white, 0.76);
+        padding: 0 12px;
+    }
+
+    .modal-subtitle {
+        font-size: 12px;
+        color: rgba($color-text-primary, 0.55);
+        margin: 0;
+        max-width: 210px;
+    }
+
+    .modal-squircle-wrapper {
+        background: rgba($color-white, 0.66);
+        box-shadow: 0 48px 29px 0 rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(32px);
+    }
+
+    .form-floating {
+        margin-bottom: 10px;
+
+        .form-control {
+            background-color: transparent;
+        }
+    }
+
+    .modal-body {
+        padding: 6px 12px 10px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        max-height: 65vh;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba($color-text-primary, 0.15);
+            border-radius: 4px;
+        }
+    }
+
+    .modal-footer {
+        border-top: none;
+        padding: 12px 24px 22px;
+        justify-content: center;
+    }
+}
+
+.create-account-modal {
+    .modal-dialog {
+        max-width: 398px;
+        margin: auto;
+    }
+
+    .modal-section {
+        background: rgba($color-white, 0.42);
+        border: 1px solid rgba($color-white, 0.20);
+        padding: 26px 34px 34px 34px;
+
+        &__title {
+            color: rgba($color-text-primary, 0.5);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 125%;
+            letter-spacing: 1.6px;
+            margin: 0 10px 16px;
+        }
+    }
+
+    .modal-privacy {
+        background: rgba($color-text-primary, 0.2);
+        border-radius: 16px;
+        padding: 14px 16px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+
+        &__check {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            border-radius: 50%;
+            background: rgba($color-white, 0.2);
+            border: 1.5px solid rgba($color-white, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-white;
+            font-size: 11px;
+            margin-top: 1px;
+        }
+
+        &__text {
+            font-family: $font-family-avenir;
+            font-size: 11px;
+            font-weight: 500;
+            color: $color-white;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+
+        &__sub {
+            font-family: $font-family-avenir;
+            font-size: 10px;
+            font-weight: 300;
+            color: rgba($color-white, 0.65);
+            line-height: 1.5;
+            margin-bottom: 0;
+
+            a {
+                color: rgba($color-white, 0.85);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .signup-btn {
+        margin: 0;
+        width: 150px;
+    }
+}

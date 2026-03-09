@@ -1,0 +1,60 @@
+@use "./variables" as *;
+
+body {
+    font-family: $font-family-avenir;
+}
+
+// ── Pill groups ─── //
+.pill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &__label {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: rgba($color-text-primary, 0.5);
+        margin-bottom: 0;
+    }
+
+    &__options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+}
+
+.pill-btn {
+    font-family: $font-family-doto;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    border: 1px solid rgba($color-text-primary, 0.18);
+    background: transparent;
+    color: rgba($color-text-primary, 0.8);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    line-height: 16px;
+    padding: 8px 10px;
+    min-width: 50px;
+    text-align: center;
+
+    &:hover {
+        border-color: rgba($color-primary, 0.4);
+        color: $color-primary;
+    }
+
+    &.active {
+        background: $color-primary;
+        border-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 2px 8px rgba($color-primary, 0.3);
+    }
+}

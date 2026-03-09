@@ -1,0 +1,150 @@
+@use "./variables" as *;
+
+.login-page {
+    display: flex;
+    background: #F4F4F4;
+    padding: 0 80px 0 50px;
+
+    .hero-img {
+        flex: 1;
+        position: relative;
+        height: 100vh;
+        padding: 50px 0;
+
+        img {
+            position: absolute;
+        }
+    }
+
+    .right-side {
+        flex: 1;
+        padding: 60px 0 30px;
+    }
+
+    .cards-container {
+        max-width: 580px;
+        margin-left: auto;
+    }
+}
+
+.signin-card {
+    background-color: #fff;
+    padding: 22px 25px 35px;
+    max-width: 575px;
+    margin: 0 auto;
+    border-radius: 150px;
+}
+
+.signin-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    margin-left: 25px;
+    gap: 5px;
+
+    h6 {
+        color: $color-text-primary;
+        font-family: $font-family-avenir;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 125%;
+        opacity: 0.5;
+        letter-spacing: 1.6px;
+        margin-bottom: 0;
+    }
+
+    .forget-password {
+        font-family: $font-family-avenir;
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 200%;
+        letter-spacing: 0.9px;
+        padding: 1px 12px;
+        text-transform: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background-color: $light-button-bg;
+    }
+}
+
+.signin-form {
+    display: flex;
+    gap: 8px;
+    .form-floating{
+        max-width: 199px;
+    }
+}
+
+.create-account-card {
+    background: url(../images/create-account-bg.jpg) center no-repeat;
+    background-size: cover;
+    border-radius: 150px;
+    padding: 42px 70px 28px 68px;
+    margin-top: 12px;
+    border: 1px solid $color-white;
+
+    h1 {
+        color: $color-white;
+        font-family: $font-family-avenir;
+        font-size: 44px;
+        font-weight: 300;
+        letter-spacing: 3.2px;
+        line-height: 44px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        color: $color-white;
+        font-family: $font-family-avenir;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 14px;
+        margin-bottom: 24px;
+    }
+
+    .info-box {
+        h6 {
+            color: $color-white;
+            font-family: $font-family-avenir;
+            font-size: 16px;
+            line-height: 125%;
+            letter-spacing: 1.6px;
+            position: relative;
+            margin-bottom: 12px;
+
+            img {
+                position: absolute;
+                margin-top: -5px;
+            }
+        }
+
+        ul {
+            padding-left: 16px;
+            margin-bottom: 28px;
+        }
+
+        li {
+            color: $color-white;
+            font-family: $font-family-avenir;
+            font-size: 12px;
+            line-height: 14px;
+
+            strong {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 18px;
+            }
+
+            p {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .btn {
+        width: 160px;
+        margin: 0 auto;
+        display: block;
+    }
+}

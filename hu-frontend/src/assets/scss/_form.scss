@@ -1,0 +1,82 @@
+@use "./variables" as *;
+
+.form-floating {
+  position: relative;
+
+  .form-control {
+    font-family: $font-family-avenir;
+    min-height: auto;
+    height: auto;
+    padding: 14px 23px !important;
+    border-radius: 100px;
+    border: 1px solid rgba(18, 18, 18, 0.10);
+    box-shadow: none;
+    background-color: $color-white;
+    font-size: 14px;
+
+    &:not(:placeholder-shown)~label,
+    &:focus~label {
+      transform: none;
+      top: -10px;
+      font-size: 12px;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $color-white inset !important;
+      -webkit-text-fill-color: $color-text-primary !important;
+    }
+  }
+
+  .form-label {
+    font-family: $font-family-avenir;
+    color: $color-text-primary;
+    font-size: 14px;
+    padding: 0 23px;
+    top: 50%;
+    height: auto;
+    transform: translateY(-50%);
+    transition: all ease-in-out 0.1s;
+
+    span {
+      color: $color-danger;
+    }
+  }
+
+  .toggle-btn {
+    border: none;
+    background: transparent;
+    outline: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    text-decoration: underline;
+    color: $color-primary;
+    font-size: 12px;
+    font-family: $font-family-avenir;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Button Sytle
+.btn {
+  font-family: $font-family-doto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $color-text-primary;
+  border-radius: 80px;
+  padding: 11px 20px;
+
+  &.btn-primary {
+    color: $color-white;
+    background: linear-gradient(270deg, #4972C1 0.01%, #9CBDFF 132.71%);
+    box-shadow: 0 4px 10px 0 rgba(73, 114, 193, 0.25);
+    border-color: $color-white;
+  }
+}

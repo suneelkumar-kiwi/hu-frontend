@@ -41,7 +41,7 @@ export function FloatingInput({
 
         <label htmlFor={inputId} className={labelClass}>
           {label}
-          <span>{required && "*"}</span>
+          <span className="asterisk">{required && "*"}</span>
         </label>
         {isPassword && (
           <button

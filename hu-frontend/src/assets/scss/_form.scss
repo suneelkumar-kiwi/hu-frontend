@@ -6,7 +6,7 @@
   .form-control {
     font-family: $font-family-avenir;
     min-height: auto;
-    height: auto;
+    height: 50px;
     padding: 14px 23px !important;
     border-radius: 100px;
     border: 1px solid rgba(18, 18, 18, 0.10);
@@ -17,8 +17,13 @@
     &:not(:placeholder-shown)~label,
     &:focus~label {
       transform: none;
-      top: -10px;
-      font-size: 12px;
+      top: 8px;
+      font-size: 10px;
+    }
+
+    &:not(:placeholder-shown),
+    &:focus {
+       padding: 22px 23px 8px !important;
     }
 
     &:-webkit-autofill {
@@ -37,7 +42,7 @@
     transform: translateY(-50%);
     transition: all ease-in-out 0.1s;
 
-    span {
+    .asterisk {
       color: $color-danger;
     }
   }

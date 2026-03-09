@@ -4,11 +4,84 @@ import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { FloatingInput } from "@/components/Form/FloatingInput";
 import { Squircle } from "corner-smoothing";
+import FloatingSelect from "../Form/FloatingSelect";
+import { Option } from "@/interfaces/form.interface";
 
 interface CreateAccountModalProps {
     show: boolean;
     onHide: () => void;
 }
+
+// Static options for selects
+const countryOptions: Option[] = [
+    { id: "us", name: "United States" },
+    { id: "uk", name: "United Kingdom" },
+    { id: "ca", name: "Canada" },
+    { id: "au", name: "Australia" },
+    { id: "other", name: "Other" },
+];
+
+const stateOptions: Option[] = [
+    { id: "al", name: "Alabama" },
+    { id: "ak", name: "Alaska" },
+    { id: "az", name: "Arizona" },
+    { id: "ar", name: "Arkansas" },
+    { id: "ca", name: "California" },
+    { id: "co", name: "Colorado" },
+    { id: "ct", name: "Connecticut" },
+    { id: "de", name: "Delaware" },
+    { id: "fl", name: "Florida" },
+    { id: "ga", name: "Georgia" },
+    { id: "hi", name: "Hawaii" },
+    { id: "id", name: "Idaho" },
+    { id: "il", name: "Illinois" },
+    { id: "in", name: "Indiana" },
+    { id: "ia", name: "Iowa" },
+    { id: "ks", name: "Kansas" },
+    { id: "ky", name: "Kentucky" },
+    { id: "la", name: "Louisiana" },
+    { id: "me", name: "Maine" },
+    { id: "md", name: "Maryland" },
+    { id: "ma", name: "Massachusetts" },
+    { id: "mi", name: "Michigan" },
+    { id: "mn", name: "Minnesota" },
+    { id: "ms", name: "Mississippi" },
+    { id: "mo", name: "Missouri" },
+    { id: "mt", name: "Montana" },
+    { id: "ne", name: "Nebraska" },
+    { id: "nv", name: "Nevada" },
+    { id: "nh", name: "New Hampshire" },
+    { id: "nj", name: "New Jersey" },
+    { id: "nm", name: "New Mexico" },
+    { id: "ny", name: "New York" },
+    { id: "nc", name: "North Carolina" },
+    { id: "nd", name: "North Dakota" },
+    { id: "oh", name: "Ohio" },
+    { id: "ok", name: "Oklahoma" },
+    { id: "or", name: "Oregon" },
+    { id: "pa", name: "Pennsylvania" },
+    { id: "ri", name: "Rhode Island" },
+    { id: "sc", name: "South Carolina" },
+    { id: "sd", name: "South Dakota" },
+    { id: "tn", name: "Tennessee" },
+    { id: "tx", name: "Texas" },
+    { id: "ut", name: "Utah" },
+    { id: "vt", name: "Vermont" },
+    { id: "va", name: "Virginia" },
+    { id: "wa", name: "Washington" },
+    { id: "wv", name: "West Virginia" },
+    { id: "wi", name: "Wisconsin" },
+    { id: "wy", name: "Wyoming" },
+];
+
+const socialPlatformOptions: Option[] = [
+    { id: "instagram", name: "Instagram" },
+    { id: "facebook", name: "Facebook" },
+    { id: "twitter", name: "Twitter / X" },
+    { id: "linkedin", name: "LinkedIn" },
+    { id: "tiktok", name: "TikTok" },
+    { id: "other", name: "Other" },
+];
 
 // Pill option helper
 function PillGroup({
@@ -52,6 +125,32 @@ function PillGroup({
 }
 
 export function CreateAccountModal({ show, onHide }: CreateAccountModalProps) {
+    const [selectedCountry, setSelectedCountry] = useState<Option | null>(null);
+    const [selectedState, setSelectedState] = useState<Option | null>(null);
+    const [selectedSocial, setSelectedSocial] = useState<Option | null>(null);
+    const [errors, setErrors] = useState<{ [key: string]: { message: string } }>({});
+
+    const handleCountryChange = (selected: Option | null) => {
+        setSelectedCountry(selected);
+        // Clear error if any
+        if (errors.countryId) {
+            setErrors((prev) => ({ ...prev, countryId: undefined }));
+        }
+    };
+
+    const handleStateChange = (selected: Option | null) => {
+        setSelectedState(selected);
+        if (errors.stateId) {
+            setErrors((prev) => ({ ...prev, stateId: undefined }));
+        }
+    };
+
+    const handleSocialChange = (selected: Option | null) => {
+        setSelectedSocial(selected);
+        if (errors.socialId) {
+            setErrors((prev) => ({ ...prev, socialId: undefined }));
+        }
+    };
     return (
 
         <Modal
@@ -88,31 +187,33 @@ export function CreateAccountModal({ show, onHide }: CreateAccountModalProps) {
                         <FloatingInput label="Phone Number" type="tel" required />
 
                         {/* Country select */}
-                        <div className="form-floating">
-                            <select id="country" className="form-control form-select" defaultValue="">
-                                <option value="" disabled hidden></option>
-                                <option value="us">United States</option>
-                                <option value="uk">United Kingdom</option>
-                                <option value="ca">Canada</option>
-                                <option value="au">Australia</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <label htmlFor="country" className="form-label">Country</label>
-                        </div>
+                        <FloatingSelect
+                            options={countryOptions}
+                            label="Country"
+                            changeHandler={handleCountryChange}
+                            placeholder="Select Country"
+                            value={selectedCountry}
+                            errorMsg={errors.countryId?.message}
+                        />
+
+                        <FloatingSelect
+                            options={stateOptions}
+                            label="Select State"
+                            changeHandler={handleStateChange}
+                            placeholder="Select State"
+                            value={selectedState}
+                            errorMsg={errors.stateId?.message}
+                        />
 
                         {/* Social platform select */}
-                        <div className="form-floating">
-                            <select id="social-platform" className="form-control form-select" defaultValue="">
-                                <option value="" disabled hidden></option>
-                                <option value="instagram">Instagram</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="twitter">Twitter / X</option>
-                                <option value="linkedin">LinkedIn</option>
-                                <option value="tiktok">TikTok</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <label htmlFor="social-platform" className="form-label">Main Social Platform</label>
-                        </div>
+                        <FloatingSelect
+                            options={socialPlatformOptions}
+                            label="Main Social Platform"
+                            changeHandler={handleSocialChange}
+                            placeholder="Select Social Platform"
+                            value={selectedSocial}
+                            errorMsg={errors.socialId?.message}
+                        />
                     </Squircle>
 
                     {/* ── Your Care Journey ── */}

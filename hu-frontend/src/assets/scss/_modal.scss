@@ -4,8 +4,8 @@
 // Create Account Modal
 // ──────────────────────────────────────────
 .squircle-modal {
-    .modal-dialog {
-        max-width: 360px;
+    &.modal-dialog {
+        max-width: 368px;
         margin: auto;
     }
 
@@ -50,7 +50,7 @@
         font-size: 12px;
         color: rgba($color-text-primary, 0.55);
         margin: 0;
-        max-width: 210px;
+        max-width: 294px;
     }
 
     .modal-squircle-wrapper {
@@ -93,13 +93,96 @@
     }
 }
 
-.create-account-modal {
-    .modal-dialog {
-        max-width: 398px;
-        margin: auto;
+// 
+.request-sent-modal {
+    .modal-title {
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
-    .modal-section {
+    .btn-primary {
+        width: 110px;
+    }
+}
+
+// ──────────────────────────────────────────
+// Create Account Offcanvas
+// ──────────────────────────────────────────
+.offcanvas-backdrop.show {
+    opacity: 0.25;
+}
+
+.offcanvas {
+    background-color: transparent;
+    border: none !important;
+    margin: 16px 0;
+
+    &.offcanvas-end {
+        right: 16px;
+    }
+
+    .squircle-wrapper {
+        background: rgba($color-white, 0.66);
+        box-shadow: 0 48px 29px 0 rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(32px);
+    }
+
+    .offcanvas-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 0 6px;
+
+        .btn-close {
+            font-size: 8px;
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background-color: $color-white;
+            border-radius: 50%;
+            color: $color-text-primary;
+        }
+    }
+
+    .offcanvas-title {
+        font-size: 10px;
+        color: $color-text-primary;
+        letter-spacing: 0.9px;
+        margin-bottom: 8px;
+        font-weight: 300;
+        line-height: 200%;
+        border-radius: 25px;
+        background: rgba($color-white, 0.76);
+        padding: 2px 12px;
+    }
+
+    .offcanvas-subtitle {
+        font-size: 12px;
+        color: rgba($color-text-primary, 0.55);
+        margin: 0;
+        max-width: 210px;
+    }
+
+    .offcanvas-body {
+        padding: 6px 12px 32px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba($color-text-primary, 0.15);
+            border-radius: 4px;
+        }
+    }
+
+    .data-section {
         background: rgba($color-white, 0.42);
         border: 1px solid rgba($color-white, 0.20);
         padding: 26px 34px 34px 34px;
@@ -110,59 +193,63 @@
             font-weight: 600;
             line-height: 125%;
             letter-spacing: 1.6px;
-            margin: 0 10px 16px;
+            margin-bottom: 16px;
         }
     }
 
-    .modal-privacy {
+    .form-floating {
+        margin-bottom: 10px;
+
+        .form-control {
+            background-color: transparent;
+            color: rgba($color-text-primary, 0.8);
+        }
+
+        .form-label {
+            color: rgba($color-text-primary, 0.8);
+        }
+    }
+
+    .react-select,
+    .floating-label {
+
+        .form-label,
+        .react-select__single-value {
+            opacity: 0.7 !important;
+        }
+    }
+
+    .floating-label {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+    .offcanvas-privacy {
         background: rgba($color-text-primary, 0.2);
-        border-radius: 16px;
-        padding: 14px 16px;
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-
-        &__check {
-            width: 22px;
-            height: 22px;
-            min-width: 22px;
-            border-radius: 50%;
-            background: rgba($color-white, 0.2);
-            border: 1.5px solid rgba($color-white, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: $color-white;
-            font-size: 11px;
-            margin-top: 1px;
-        }
-
-        &__text {
-            font-family: $font-family-avenir;
-            font-size: 11px;
-            font-weight: 500;
-            color: $color-white;
-            line-height: 1.5;
-            margin-bottom: 4px;
-        }
+        padding: 24px 24px 20px;
 
         &__sub {
-            font-family: $font-family-avenir;
-            font-size: 10px;
-            font-weight: 300;
-            color: rgba($color-white, 0.65);
-            line-height: 1.5;
+            font-size: 12px;
+            color: rgba($color-white, 0.6);
+            line-height: 16px;
             margin-bottom: 0;
+            padding-left: 32px;
 
             a {
-                color: rgba($color-white, 0.85);
+                color: rgba($color-white, 0.6);
                 text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
             }
         }
     }
 
     .signup-btn {
-        margin: 0;
+        margin: 18px auto 0;
         width: 150px;
     }
 }

@@ -23,7 +23,7 @@
 
     &:not(:placeholder-shown),
     &:focus {
-       padding: 22px 23px 8px !important;
+      padding: 22px 23px 8px !important;
     }
 
     &:-webkit-autofill {
@@ -64,6 +64,39 @@
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+.form-check {
+  padding-left: 32px;
+
+  .form-check-input {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba($color-white, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-size: 11px;
+    margin-top: 1px;
+    box-shadow: none;
+    background: transparent;
+    margin-left: -32px;
+    cursor: pointer;
+
+    &:checked {
+      background: $color-white url("../images/check-icon.svg") no-repeat center;
+    }
+  }
+
+  .form-check-label {
+    color: $color-white;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
   }
 }
 

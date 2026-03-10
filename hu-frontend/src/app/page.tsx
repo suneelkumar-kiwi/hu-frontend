@@ -6,10 +6,12 @@ import { Squircle } from 'corner-smoothing';
 import { loginBg, logo, questionMarkIcon, aiStar } from "@/assets/images";
 import { FloatingInput } from "@/components/Form/FloatingInput";
 import { Button } from "react-bootstrap";
-import { CreateAccountModal } from "@/components/Modal/CreateAccountModal";
+import CreateAccountDrawer from "@/components/Offcanvas/CreateAccountDrawer";
+import { RequestSentModal } from "@/components/Modal/RequestSentModal";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [showRequestSentModal, setShowRequestSentModal] = useState(false);
 
   return (
     <div className="login-page">
@@ -68,7 +70,8 @@ export default function Home() {
           </Squircle>
         </div>
       </div>
-      <CreateAccountModal show={showModal} onHide={() => setShowModal(false)} />
+      <CreateAccountDrawer show={showModal} onHide={() => setShowModal(false)} showRequestSentModal={() => setShowRequestSentModal(true)} />
+      <RequestSentModal show={showRequestSentModal} onHide={() => setShowRequestSentModal(false)} />
     </div>
   );
 }

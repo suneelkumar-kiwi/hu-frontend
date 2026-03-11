@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { Offcanvas, Button, FormCheck } from "react-bootstrap";
-import { FloatingInput } from "@/components/Form/FloatingInput";
+import { FloatingInput } from "@/components/form/FloatingInput";
 import { Squircle } from "corner-smoothing";
-import FloatingSelect from "../Form/FloatingSelect";
+import FloatingSelect from "../form/FloatingSelect";
 import { Option } from "@/interfaces/form.interface";
 import Link from "next/link";
-import PillGroup from "@/components/Form/PillGroup";
+import PillGroup from "@/components/form/PillGroup";
 
 interface CreateAccountProps {
     show: boolean;

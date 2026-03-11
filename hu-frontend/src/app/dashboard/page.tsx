@@ -1,7 +1,13 @@
+import DashboardTopbar from "@/components/shared/DashboardTopbar";
+import PatientList from "@/components/shared/PatientList";
+import SideNav from "@/components/shared/SideNav";
+
 export default function DashboardPage() {
     return (
-        <div>
-            <h1>Dashboard</h1>
+        <div className="dashboard-page">
+            <SideNav />
+            <DashboardTopbar />
+            <PatientList />
         </div>
     );
 }

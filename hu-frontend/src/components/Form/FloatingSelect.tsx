@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { default as Select, ActionMeta } from 'react-select';
 import { SelectDropDownProps } from "@/interfaces/form.interface";
-import { customSelectStyles } from "../ui/CustomSelectConstants";
+import { customSelectStyles } from "../shared/CustomSelectConstants";
 import base from "react-select/base";
 
 const FloatingSelect = (props: SelectDropDownProps) => {
@@ -37,9 +37,8 @@ const FloatingSelect = (props: SelectDropDownProps) => {
         {...props}
         value={value}
         // styles={customSelectStyles}
-        className={`react-select react-select-container ${
-          errorMsg ? 'select-error' : ''
-        }`}
+        className={`react-select react-select-container ${errorMsg ? 'select-error' : ''
+          }`}
         classNamePrefix="react-select"
         onFocus={handleFocus}
         onBlur={handleBlur}
@@ -58,15 +57,14 @@ const FloatingSelect = (props: SelectDropDownProps) => {
         menuPosition="fixed"
         // menuIsOpen
         styles={{
-            ...customSelectStyles,
-            menuPortal: base => ({ ...base, zIndex: 9999 })
+          ...customSelectStyles,
+          menuPortal: base => ({ ...base, zIndex: 9999 })
         }}
         noOptionsMessage={() => <p>No result found!</p>}
       />
       <Form.Label
-        className={`required react-select-label ${
-          value || isFocused ? 'selected' : ''
-        }`}
+        className={`required react-select-label ${value || isFocused ? 'selected' : ''
+          }`}
       >
         {label}
         {required && <em className="required-field">*</em>}

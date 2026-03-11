@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import { FloatingInput } from "@/components/Form/FloatingInput";
+import { FloatingInput } from "@/components/form/FloatingInput";
 import { Squircle } from "corner-smoothing";
-import FloatingSelect from "../Form/FloatingSelect";
+import FloatingSelect from "../form/FloatingSelect";
 import { Option } from "@/interfaces/form.interface";
 
 interface CreateAccountModalProps {

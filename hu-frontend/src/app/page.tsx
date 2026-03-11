@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Squircle } from 'corner-smoothing';
 import { loginBg, logo, questionMarkIcon, aiStar } from "@/assets/images";
-import { FloatingInput } from "@/components/Form/FloatingInput";
+import { FloatingInput } from "@/components/form/FloatingInput";
 import { Button } from "react-bootstrap";
-import CreateAccountDrawer from "@/components/Offcanvas/CreateAccountDrawer";
-import { RequestSentModal } from "@/components/Modal/RequestSentModal";
+import CreateAccountDrawer from "@/components/offcanvas/CreateAccountDrawer";
+import { RequestSentModal } from "@/components/modal/RequestSentModal";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);

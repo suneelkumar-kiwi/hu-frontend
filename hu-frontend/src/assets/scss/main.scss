@@ -1,13 +1,15 @@
 // Main SCSS
 
-@use "./variables" as *;
-@use "./mixins" as *;
+@use "@/assets/scss/variables" as *;
+@use "@/assets/scss/mixins" as *;
 
-@use "./common";
+@use "@/assets/scss/common";
 
-@use "./form";
-@use "./floatingSelect";
+@use "@/assets/scss/form";
+@use "@/assets/scss/floatingSelect";
 
-@use "./modal";
+@use "@/assets/scss/modal";
 
-@use "./login";
+@use "@/assets/scss/login";
+@use "@/assets/scss/patientList";
+@use "@/assets/scss/dashboard";

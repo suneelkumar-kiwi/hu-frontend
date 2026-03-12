@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+.dashboard-page {
+    background-color: $color-light-gray;
+    display: flex;
+
+    .dashboard-main {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 380px);
+    }
+
+    .dashboard-sidebar {
+        width: 380px;
+    }
+}

@@ -9,8 +9,9 @@ export default function DashboardPage() {
                 <div className="dashboard-header">
                     <DashboardTopbar />
                 </div>
+                <SideNav />
                 <div className="dashboard-content">
-                    <SideNav />
+                    <h1> Welcome, Dr. Eve </h1>
                 </div>
             </div>
             <div className="dashboard-sidebar">

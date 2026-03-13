@@ -1,3 +1,8 @@
+import AppointmentsCalendar from "@/components/dashboard/AppointmentsCalendar";
+import ChatPanel from "@/components/dashboard/ChatPanel";
+import DashboardIntro from "@/components/dashboard/DashboardIntro";
+import PastRecording from "@/components/dashboard/PastRecording";
+import PatientBillingHistory from "@/components/dashboard/PatientBillingHistory";
 import DashboardTopbar from "@/components/shared/DashboardTopbar";
 import PatientList from "@/components/shared/PatientList";
 import SideNav from "@/components/shared/SideNav";
@@ -11,7 +16,11 @@ export default function DashboardPage() {
                 </div>
                 <SideNav />
                 <div className="dashboard-content">
-                    <h1> Welcome, Dr. Eve </h1>
+                    <DashboardIntro />
+                    <AppointmentsCalendar />
+                    <ChatPanel />
+                    <PastRecording />
+                    <PatientBillingHistory />
                 </div>
             </div>
             <div className="dashboard-sidebar">

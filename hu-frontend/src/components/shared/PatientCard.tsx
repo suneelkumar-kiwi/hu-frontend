@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import SwitchToggle from '../Form/SwitchToggle';
-import { Message, Star } from '@/assets/icons/Icons';
+import { Checked, Exclamation, Message, Star } from '@/assets/icons/Icons';
 import { Squircle } from 'corner-smoothing';
 import { infoIcon } from "@/assets/images";
 
@@ -44,6 +44,21 @@ const PatientCard = ({
           <p>
             {gender}, {age}yrs
           </p>
+          
+          <div className="patient-status">
+            <div className="status-item">
+              <div className="status-icon"><Checked /></div>
+              <p className="status-text"><span>78%</span> Onboarding done</p>
+            </div>
+            <div className="status-item">
+              <div className="status-icon"><Checked /></div>
+              <p className="status-text">Blood Work Uploaded</p>
+            </div>
+            <div className="status-item">
+              <div className="status-icon"><Exclamation /></div>
+              <p className="status-text">Analysis Completed, Approval Pending</p>
+            </div>
+          </div>
 
           <div className="patient-actions">
             <div className="patient-info">

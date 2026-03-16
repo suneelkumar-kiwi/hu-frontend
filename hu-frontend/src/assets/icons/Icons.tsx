@@ -214,6 +214,27 @@ const DotIcon: React.FC<SvgIconProps> = ({
   </svg>
 );
 
+const CheckedIcon: React.FC<SvgIconProps> = ({
+  width = 8,
+  height = 6,
+  color = 'currentColor',
+}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 8 6" fill="none">
+    <path opacity="0.52" d="M0.620605 2.71672L2.33093 4.67579L6.43742 0.621094" stroke={color} stroke-width="1.24119" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+);
+
+const exclamationIcon: React.FC<SvgIconProps> = ({
+  width = 10,
+  height = 10,
+  color = 'currentColor',
+}) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 10 10" fill="none">
+    <path d="M4.53035 6.10156C4.53425 6.35742 4.74324 6.5625 4.9991 6.5625C5.25496 6.5625 5.46394 6.35547 5.46785 6.10156L5.6241 1.89063C5.63386 1.73047 5.57527 1.57422 5.46199 1.45313C5.3409 1.32422 5.17293 1.25 4.9991 1.25C4.82527 1.25 4.6573 1.32422 4.53621 1.45313C4.42293 1.57422 4.36433 1.73047 4.3741 1.89063L4.53035 6.10156Z" fill={color}/>
+    <path d="M5 8.75C5.34518 8.75 5.625 8.47018 5.625 8.125C5.625 7.77982 5.34518 7.5 5 7.5C4.65482 7.5 4.375 7.77982 4.375 8.125C4.375 8.47018 4.65482 8.75 5 8.75Z" fill={color}/>
+  </svg>
+);
+
 export const Star = React.memo(StarIcon);
 export const Search = React.memo(SearchIcon);
 export const Message = React.memo(MessageIcon);
@@ -235,6 +256,8 @@ export const Reply = React.memo(ReplyIcon);
 export const Attachment = React.memo(AttachmentIcon);
 export const Play = React.memo(PlayIcon);
 export const Dot = React.memo(DotIcon);
+export const Checked = React.memo(CheckedIcon);
+export const Exclamation = React.memo(exclamationIcon);
 
 
 
